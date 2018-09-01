@@ -51,9 +51,23 @@ Ruby includes five built-in classes for representing numbers, and the standard l
 
 #### String Literals
 
-##### Single Quoted String Literals
-- These are the simplest form of string literals
-- The only escape sequesces allowed are backslashes `'\\'` and single quotes `\'`
-- No string interpolation is allowed (described later)
+- Single Quoted String Literals
+    - These are the simplest form of string literals
+    - The only escape sequesces allowed are backslashes `'\\'` and single quotes `\'`
+    - No string interpolation is allowed (described later)
+- Double Quoted Strings
+    - Much more flexible than single-quoted literals
+    - Support many more escape sequences such as `\n` and `\t`, etc
+    - String interpolation is supported
+
+#### String Interpolation
+- Double-quoted string literals may also include arbitrary Ruby expressions
+- When the string is created, the expression is evaluated, converted to a string, and inserted into the string in place of the expression text itself. 
+- This substitution of an expression with its value is known in Ruby as “string interpolation.” 
+- Expressions within double-quoted strings begin with the # character and are enclosed within curly braces:
+```ruby
+"360 degrees=#{2*Math::PI} radians" # "360 degrees=6.28318530717959 radians"
+```
+
 
 
