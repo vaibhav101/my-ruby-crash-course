@@ -65,9 +65,14 @@ Ruby includes five built-in classes for representing numbers, and the standard l
 - When the string is created, the expression is evaluated, converted to a string, and inserted into the string in place of the expression text itself. 
 - This substitution of an expression with its value is known in Ruby as “string interpolation.” 
 - Expressions within double-quoted strings begin with the # character and are enclosed within curly braces:
-```ruby
-"360 degrees=#{2*Math::PI} radians" # "360 degrees=6.28318530717959 radians"
-```
+    ```ruby
+    "360 deg = #{2*Math::PI} rad"   # => "360 deg = 6.28318530717959 rad"
+    ```
+- When the expression to be interpolated into the string literal is simply a reference to a global, instance, or class variable, then the curly braces may be omitted:
+    ```ruby
+    $salutation = 'hello'   # Define a global variable
+    "#$salutation world"    # Use it in a double-quoted string
+    ```
 
 
 
