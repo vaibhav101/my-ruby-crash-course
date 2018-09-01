@@ -38,8 +38,6 @@ total = x       # This is a complete expression
 
 ### Numbers
 ![The Numeric class hierarchy in Ruby](/images/numeric_class_hierarchy.png)
-
-![](https://github.com/vaibhav101/my-ruby-crash-course/raw/master/images/numeric_class_hierarchy.png)
 Ruby includes five built-in classes for representing numbers, and the standard library includes three more numeric classes that are sometimes useful.
 
 - All number objects in Ruby are instances of `Numeric`. All integers are instances of `Integer`.
@@ -53,13 +51,16 @@ Ruby includes five built-in classes for representing numbers, and the standard l
 
 - Single Quoted String Literals
     - These are the simplest form of string literals
-    - The only escape sequesces allowed are backslashes `'\\'` and single quotes `\'`
+    - The only escape sequesces allowed are backslashes `\\` and single quotes `\'`
     - No string interpolation is allowed (described later)
 - Double Quoted Strings
     - Much more flexible than single-quoted literals
     - Support many more escape sequences such as `\n` and `\t`, etc
     - String interpolation is supported
-
+- String literals written together one after the other on the same line are concatenated
+    ```ruby
+    "x" "y"     # => "xy"
+    ```
 #### String Interpolation
 - Double-quoted string literals may also include arbitrary Ruby expressions
 - When the string is created, the expression is evaluated, converted to a string, and inserted into the string in place of the expression text itself. 
@@ -72,6 +73,11 @@ Ruby includes five built-in classes for representing numbers, and the standard l
     ```ruby
     $salutation = 'hello'   # Define a global variable
     "#$salutation world"    # Use it in a double-quoted string
+    ```
+- Ruby also supports Python like string interpolation:
+    ```ruby
+    "pi is about %.4f" % Math::PI   # Same as example above
+    "%s: %f" % ["pi", Math::PI]     # Array on right side for multiple args
     ```
 
 
