@@ -28,7 +28,7 @@ total = x +     # Incomplete expression, parsing continues
     y
 ```
 
-But this code assigns x to total, and then evaluates y, doing nothing with it:
+But this code assigns `x` to total, and then evaluates `y`, doing nothing with it:
 ```ruby
 total = x       # This is a complete expression
     + y         # A useless but complete expression
@@ -38,4 +38,22 @@ total = x       # This is a complete expression
 
 ### Numbers
 ![The Numeric class hierarchy in Ruby](/images/numeric_class_hierarchy.png)
+
+![](https://github.com/vaibhav101/my-ruby-crash-course/raw/master/images/numeric_class_hierarchy.png)
 Ruby includes five built-in classes for representing numbers, and the standard library includes three more numeric classes that are sometimes useful.
+
+- All number objects in Ruby are instances of `Numeric`. All integers are instances of `Integer`.
+- If an integer value fits within 31 bits (on most implementations), it is an instance of `Fixnum`. Otherwise, it is a `Bignum`.
+- `Bignum` objects represent integers of arbitrary size, and if the result of an operation on `Fixnum` operands is too big to fit in a `Fixnum`, that result is transparently converted to a `Bignum`. Similarly, if the result of an operation on `Bignum` objects falls within the range of `Fixnum`, then the result is a `Fixnum`.
+- **All `Numeric` objects are immutable; there are no methods that allow you to change the value held by the object. If you pass a reference to a numeric object to a method, you need not worry that the method will modify the object.**
+
+### Strings
+
+#### String Literals
+
+##### Single Quoted String Literals
+- These are the simplest form of string literals
+- The only escape sequesces allowed are backslashes `'\\'` and single quotes `\'`
+- No string interpolation is allowed (described later)
+
+
