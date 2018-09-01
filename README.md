@@ -37,4 +37,5 @@ total = x       # This is a complete expression
 ## Ruby Datatypes
 
 ### Numbers
-
+![The Numeric class hierarchy in Ruby](/images/numeric_class_hierarchy.png)
+Ruby includes five built-in classes for representing numbers, and the standard library includes three more numeric classes that are sometimes useful.
